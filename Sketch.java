@@ -2,35 +2,54 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
+  // create height and width variables
+  int height;
+  int width;
+
   public void settings() {
-	// put your size call here
-    size(400, 400);
+    // set value of height and width variables
+    height = 400;
+    width = 100;
+    size(width, height);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
   public void setup() {
-    background(210, 255, 173);
+    background(127, 204, 240);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
+    // hill
+    fill(133, 214, 133);
+    ellipse(width / 4, height, (float)(width * 1.75), (float)(height * 0.875));
 	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
+    // house
+    fill(97, 81, 57);
+    rect(width / 4, height / 2, width / 4, (float)(height * 0.1875));
 
-    stroke(255);
-    line(50, 125, 70, 50);  
-  }
+    // windows
+    fill(165, 227, 242);
+    rect((float)(width * 0.275), (float)(height * 0.5625), (float)(width * 0.0625), (float)(height * 0.0625));
+    rect((float)(width * 0.4125), (float)(height * 0.5625), (float)(width * 0.0625), (float)(height * 0.0625));
+
+    // window lines
+    fill(0, 0, 0);
+    line((float)(width * 0.275), (float)(height * 0.5625), (float)(width * 0.3375), (float)(height * 0.625));
+    line((float)(width * 0.275), (float)(height * 0.625), (float)(width * 0.3375), (float)(height * 0.5625));
+    line((float)(width * 0.4125), (float)(height * 0.5625), (float)(width * 0.475), (float)(height * 0.625));
+    line((float)(width * 0.4125), (float)(height * 0.625), (float)(width * 0.475), (float)(height * 0.5625));
+
+    // door
+    fill(128, 114, 84);
+    rect((float)(width * 0.35), (float)(height * 0.5625), (float)(width * 0.05), (float)(height * 0.125));
+
+    // roof
+    fill(69, 64, 53);
+    triangle(width / 4, height / 2, (float)(width * 0.375), (float)(height * 0.375), width / 2, height / 2);
+
+    // sun
+    fill(247, 246, 168);
+    ellipse((float)(width * 0.8125), (float)(height * 0.1875), width / 4, height / 4);
   
-  // define other methods down here.
+  } 
+
 }
